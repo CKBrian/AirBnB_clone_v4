@@ -6,16 +6,9 @@ from models.city import City
 from models.amenity import Amenity
 from models.place import Place
 from os import environ
-<<<<<<< HEAD
-from uuid import uuid4
-from flask import Flask, render_template
-app = Flask(__name__)
-
-=======
 from flask import Flask, render_template
 import uuid
 app = Flask(__name__)
->>>>>>> cac1a738f59690d2b2573a4496d12b5fcf16537a
 # app.jinja_env.trim_blocks = True
 # app.jinja_env.lstrip_blocks = True
 
@@ -26,20 +19,12 @@ def close_db(error):
     storage.close()
 
 
-<<<<<<< HEAD
-@app.route('/0-hbnb', strict_slashes=False)
-=======
-@app.route('/0-hbnb/', strict_slashes=False)
->>>>>>> cac1a738f59690d2b2573a4496d12b5fcf16537a
+@app.route('/1-hbnb/', strict_slashes=False)
 def hbnb():
     """ HBNB is alive! """
     states = storage.all(State).values()
     states = sorted(states, key=lambda k: k.name)
     st_ct = []
-<<<<<<< HEAD
-    cacheId = str(uuid4())
-=======
->>>>>>> cac1a738f59690d2b2573a4496d12b5fcf16537a
 
     for state in states:
         st_ct.append([state, sorted(state.cities, key=lambda k: k.name)])
@@ -49,26 +34,13 @@ def hbnb():
 
     places = storage.all(Place).values()
     places = sorted(places, key=lambda k: k.name)
-<<<<<<< HEAD
-
-    return render_template('0-hbnb.html',
-                           cache_id=cacheId,
-                           states=st_ct,
-                           amenities=amenities,
-                           places=places)
-=======
     cache_id = uuid.uuid4()
-    return render_template('0-hbnb.html',
+    return render_template('1-hbnb.html',
                            states=st_ct,
                            amenities=amenities,
                            places=places, cache_id=cache_id)
->>>>>>> cac1a738f59690d2b2573a4496d12b5fcf16537a
 
 
 if __name__ == "__main__":
     """ Main Function """
-<<<<<<< HEAD
-    app.run(host='0.0.0.0', port=5000)
-=======
     app.run(debug=True, host='0.0.0.0', port=5000)
->>>>>>> cac1a738f59690d2b2573a4496d12b5fcf16537a
