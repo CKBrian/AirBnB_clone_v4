@@ -1,0 +1,4 @@
+/* global $ */
+document.addEventListener('DOMContentLoaded', () => {
+  
+});
