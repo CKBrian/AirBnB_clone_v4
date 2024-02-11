@@ -54,7 +54,7 @@ $(document).ready(function () {
       delete selectedAmenities[amenity_id];
     }
 
-    $('h4').text(Object.values(selectedAmenities).join(', '));
+    $('.amenities h4').text(Object.values(selectedAmenities).join(', '));
   });
 
   $('button').click(function () {
