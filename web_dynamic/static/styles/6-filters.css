@@ -51,9 +51,6 @@ button:hover {
     width: 25%;
 }
 
-input {
-    margin-right: 10px
-}
 .popover {
     visibility: hidden;
     width: 100%;
